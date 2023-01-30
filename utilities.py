@@ -30,6 +30,11 @@ def write_csv_row(row, filename):
     with open(filename, 'a') as file:
         writer = csv.writer(file)
         writer.writerow(row)
+# Write a row to a CSV
+def write_csv_row_overwrite(row, filename):
+    with open(filename, 'w') as file:
+        writer = csv.writer(file)
+        writer.writerow(row)
 
 # Initialize the folder and files for the database empty
 def initialize_database():
