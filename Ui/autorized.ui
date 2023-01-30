@@ -154,6 +154,24 @@
     </font>
    </property>
    <property name="text">
+    <string>CAMBIO</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_8">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>140</y>
+     <width>211</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
     <string>RETIRO</string>
    </property>
   </widget>
