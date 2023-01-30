@@ -68,8 +68,12 @@ def check_start_ammount():
 # None # The record transaction button will not work
 
 def open_cash_register():
-    pass
+    set_register_open(True)
 
+def register_is_open():
+    filename = 'csv_database/register_status.csv'
+    status_code = [status for status in get_rows(filename)][-1][0]
+    return True if status_code == "open" else False
 
 def add_money(amount):
     write_csv_row([get_current_money() + amount],
