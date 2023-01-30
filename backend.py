@@ -103,6 +103,8 @@ def delete_user(username):
     for user in [user for user in users if username not in users]:
         write_csv_row_overwrite(user, 'csv_database/users.csv')
 
+def calculate_currency_exchange(input, rate):
+    return input * rate
 
 def tests():
     initialize_database()
