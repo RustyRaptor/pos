@@ -12,6 +12,12 @@ def get_users():
         for row in reader:
             yield (row[1], row[2])
 
+def get_rows(filename):
+    with open(filename, 'r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            yield row
+
 # Write a row to a CSV
 def write_csv_row(row, filename):
     with open(filename, 'a') as file:
@@ -67,6 +73,10 @@ def log_action(action_string, username):
         writer = csv.writer(file)
         writer.writerow([datetime.datetime.now(), action_string, username])
 
+
+# Generate timestamp with seconds
+def generate_timestamp():
+    return str(datetime.datetime.now())
 
 # Generates the required string for a date stamp
 # Only does date without time for EOD and SOD reports
