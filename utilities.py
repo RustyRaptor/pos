@@ -17,10 +17,22 @@ def get_rows(filename):
         reader = csv.reader(file)
         for row in reader:
             yield row
+def set_register_open(is_open):
+    with open(filename, 'a') as file:
+        writer = csv.writer(file)
+        if is_open:
+            writer.writerow(["open"])
+        else:
+            writer.writerow(["closed"])
 
 # Write a row to a CSV
 def write_csv_row(row, filename):
     with open(filename, 'a') as file:
+        writer = csv.writer(file)
+        writer.writerow(row)
+# Write a row to a CSV
+def write_csv_row_overwrite(row, filename):
+    with open(filename, 'w') as file:
         writer = csv.writer(file)
         writer.writerow(row)
 
@@ -33,7 +45,7 @@ def initialize_database():
     
     file_list = ["users.csv", "nonauthorizedpassword.csv",
                  "nonauthorizedwithdrawals.csv", "startofdayreports.csv",
-                 "endofdayreports.csv", "actionlog.csv"]
+                 "endofdayreports.csv", "actionlog.csv","register_status.csv"]
     
     for file in file_list:
         with open('csv_database/'+file, 'w') as file:

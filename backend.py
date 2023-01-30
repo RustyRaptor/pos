@@ -68,8 +68,12 @@ def check_start_ammount():
 # None # The record transaction button will not work
 
 def open_cash_register():
-    pass
+    set_register_open(True)
 
+def register_is_open():
+    filename = 'csv_database/register_status.csv'
+    status_code = [status for status in get_rows(filename)][-1][0]
+    return True if status_code == "open" else False
 
 def add_money(amount):
     write_csv_row([get_current_money() + amount],
@@ -85,18 +89,31 @@ def get_current_money():
                                         + generate_date_only_stamp())][-1][0])
 
 
-def new_user(id, username, password, real_name):
-    write_csv_row([id, username, password, real_name],
+# Create new user in CSV file
+def new_user(username, password, real_name):
+    write_csv_row([generate_id(), username, password, real_name],
                   "csv_database/users.csv")
     log_action("added new user " + username, "Administrator")
 
+def delete_user(username):
+    users = [user for user in get_rows('csv_database/users.csv')]
+    for user in [user for user in users if username not in users]:
+        write_csv_row_overwrite(user, 'csv_database/users.csv')
+    
+    
+    
 
 def tests():
     initialize_database()
     print("user doesn't exist: ", login("john", "susy123"))
     print(generate_id())
-    new_user(generate_id(), "john", "susy123", "John Madden")
+    new_user("john", "susy123", "John Madden")
+    new_user("susan", "susy123", "John Madden")
+    print([user for user in get_users()])
     print("user exists: ", login("john", "susy123"))
+    delete_user("john")
+    print("user exists after delete: ", login("john", "susy123"))
+    print([user for user in get_users()])
     print("before start", check_start_ammount())
     start_day(500)
     print("after start before end ", check_start_ammount())
