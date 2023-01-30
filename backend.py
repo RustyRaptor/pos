@@ -1,6 +1,7 @@
 import csv
 import datetime
 import uuid
+import os
 
 
 # Generates the required string for a date stamp
@@ -14,7 +15,7 @@ def generate_date_only_stamp():
 #Read user and password from user imput and check credentials with the csv file
 def login(user, password):
     
-    with open('users.csv', 'r') as file:
+    with open('csvdatabase/users.csv', 'r') as file:
         reader = csv.reader(file)
         for row in reader:
             if row[0] == user and row[1] == password:
@@ -26,7 +27,7 @@ def login(user, password):
 
 def check_password_nonautorized_widrawal(password):
     
-    with open('nonautorizedpassword.csv', 'r') as file:
+    with open('csvdatabase/nonautorizedpassword.csv', 'r') as file:
         reader = csv.reader(file)
         for row in reader:
             if row[0] == password:
@@ -54,7 +55,7 @@ def compute_money_owed(money_owed, money_from_Customer ,money_returned):
 
 def nonautorized_widrawl(widrawl, reason):
     
-    with open('nonautorizedwidrawls.csv', 'a') as file:
+    with open('csvdatabase/nonautorizedwidrawls.csv', 'a') as file:
         writer = csv.writer(file)
         writer.writerow([widrawl, reason,datetime.datetime.now()])
     
@@ -66,7 +67,7 @@ def nonautorized_widrawl(widrawl, reason):
 
 def start_day(starting_money):
     
-    with open('startofdayreports.csv', 'a') as file:
+    with open('csvdatabase/startofdayreports.csv', 'a') as file:
         writer = csv.writer(file)
         writer.writerow([starting_money,generate_date_only_stamp()])
     
@@ -76,7 +77,7 @@ def start_day(starting_money):
 #This function will close the reigser recording into the csv file the ammount of money that was left in the register
 # This funciton is not complete 
 def end_day(money_left):
-    with open('endofdayreports.csv', 'a') as file:
+    with open('csvdatabase/endofdayreports.csv', 'a') as file:
         writer = csv.writer(file)
         writer.writerow([money_left,generate_date_only_stamp()])
         return True #Replace with a message to the screen saying that the money left was recorded and trake to the main screen
@@ -91,7 +92,7 @@ def check_start_ammount():
     
 # Check if we opened today yet
 def start_entry_exists():
-    with open('startofdayreports.csv', 'r') as file:
+    with open('csvdatabase/startofdayreports.csv', 'r') as file:
         reader = csv.reader(file)
         for row in reader:
             if int(row[0]) > 0 and row[1] == generate_date_only_stamp():
@@ -100,7 +101,7 @@ def start_entry_exists():
 
 # Check if we closed today yet
 def end_entry_exists():
-    with open('endofdayreports.csv', 'r') as file:
+    with open('csvdatabase/endofdayreports.csv', 'r') as file:
         reader = csv.reader(file)
         
         for row in reader:
@@ -124,15 +125,16 @@ def withdraw_money(amount):
     pass
 
 def get_current_money():
+    pass
     
 
 def log_action(action_string, username):
-    with open("actionlog.csv", 'a') as file:
+    with open("csvdatabase/actionlog.csv", 'a') as file:
         writer = csv.writer(file)
         writer.writerow([datetime.datetime.now(), action_string, username])
 
 def new_user(id, username, password, real_name):
-    with open("user.csv", 'a') as file:
+    with open("csvdatabase/users.csv", 'a') as file:
         writer = csv.writer(file)
         writer.writerow([id, username, password, real_name])
     log_action("added new user " + username, "Administrator")
@@ -140,6 +142,13 @@ def new_user(id, username, password, real_name):
 def generate_id():
     return uuid.uuid4().hex
 
+def initialize_database():
+    try:
+        os.mkdir("./csv_database")
+    except:
+        print("already there")
+    
+    file_list = ["users.csv"]
 
 def tests():
     print(generate_id())
@@ -149,6 +158,7 @@ def tests():
     print("after start before end ", check_start_ammount())
     end_day(1000)
     print("after end", check_start_ammount())
+
 
 if __name__ == "__main__":
     tests()
