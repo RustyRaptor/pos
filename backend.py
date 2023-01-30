@@ -78,7 +78,7 @@ def add_money(amount):
 
 
 def withdraw_money(amount):
-    pass
+    add_money(-amount)
 
 
 def get_current_money():
@@ -103,6 +103,10 @@ def tests():
     print("after start before end ", check_start_ammount())
     end_day(1000)
     print("after end", check_start_ammount())
+    print(get_current_money())
+    add_money(5)
+    print(get_current_money())
+    withdraw_money(10)
     print(get_current_money())
 
 
