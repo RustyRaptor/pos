@@ -12,6 +12,12 @@ def get_users():
         for row in reader:
             yield (row[1], row[2])
 
+def get_rows(filename):
+    with open(filename, 'r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            yield row
+
 # Write a row to a CSV
 def write_csv_row(row, filename):
     with open(filename, 'a') as file:
