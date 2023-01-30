@@ -70,10 +70,12 @@ def check_start_ammount():
 def open_cash_register():
     set_register_open(True)
 
+
 def register_is_open():
     filename = 'csv_database/register_status.csv'
     status_code = [status for status in get_rows(filename)][-1][0]
     return True if status_code == "open" else False
+
 
 def add_money(amount):
     write_csv_row([get_current_money() + amount],
@@ -95,13 +97,14 @@ def new_user(username, password, real_name):
                   "csv_database/users.csv")
     log_action("added new user " + username, "Administrator")
 
+
 def delete_user(username):
     users = [user for user in get_rows('csv_database/users.csv')]
     for user in [user for user in users if username not in users]:
         write_csv_row_overwrite(user, 'csv_database/users.csv')
-    
-    
-    
+
+def calculate_currency_exchange(input, rate):
+    return input * rate
 
 def tests():
     initialize_database()
