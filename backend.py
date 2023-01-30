@@ -1,4 +1,3 @@
-import datetime
 from utilities import *
 
 
@@ -28,7 +27,7 @@ def compute_money_owed(money_owed, money_from_Customer, money_returned):
 
 
 def nonautorized_widrawl(withdrawal, reason):
-    write_csv_row([withdrawal, reason, datetime.datetime.now()],
+    write_csv_row([withdrawal, reason, generate_timestamp()],
                   'csv_database/endofdayreports.csv')
     return True
 
