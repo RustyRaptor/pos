@@ -148,7 +148,7 @@
     </font>
    </property>
    <property name="text">
-    <string/>
+    <string>WARNING_TEXT</string>
    </property>
   </widget>
  </widget>
