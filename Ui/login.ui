@@ -132,6 +132,25 @@
     <string>LOG IN</string>
    </property>
   </widget>
+  <widget class="QLabel" name="warning_label">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>350</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>28</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>warning_text</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
