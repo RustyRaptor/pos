@@ -49,7 +49,7 @@
     <string>ESTA SEGURO QUE DESEA TERMINAR EL DIA </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="no_button">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -67,7 +67,7 @@
     <string>NO</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="yes_button">
    <property name="geometry">
     <rect>
      <x>630</x>

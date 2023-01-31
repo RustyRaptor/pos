@@ -16,14 +16,19 @@
   <property name="inputMethodHints">
    <set>Qt::ImhNone</set>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="log_in_button">
    <property name="geometry">
     <rect>
-     <x>710</x>
-     <y>500</y>
-     <width>83</width>
-     <height>25</height>
+     <x>632</x>
+     <y>444</y>
+     <width>161</width>
+     <height>81</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Log In</string>
@@ -67,7 +72,7 @@
     <string>CONTRASENA:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="username_fill">
    <property name="geometry">
     <rect>
      <x>430</x>
@@ -82,7 +87,7 @@
     </font>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="password_fill">
    <property name="geometry">
     <rect>
      <x>430</x>

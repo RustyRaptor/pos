@@ -49,7 +49,7 @@
     <string>INGRESAR CANTIDAD DE DINERO:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="money_ammount_box">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -67,7 +67,7 @@
     <set>Qt::ImhDigitsOnly</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="complete_button">
    <property name="geometry">
     <rect>
      <x>710</x>
@@ -80,7 +80,7 @@
     <string>COMPLETAR</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="exit_button">
    <property name="geometry">
     <rect>
      <x>50</x>

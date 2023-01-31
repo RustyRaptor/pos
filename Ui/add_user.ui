@@ -85,7 +85,7 @@
     <string>CONTRASENA:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_6">
+  <widget class="QPushButton" name="cancel_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -103,7 +103,7 @@
     <string>CANCELAR</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_7">
+  <widget class="QPushButton" name="add_button">
    <property name="geometry">
     <rect>
      <x>710</x>
@@ -121,7 +121,7 @@
     <string>AGREGAR</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="password">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -139,7 +139,7 @@
     <set>Qt::ImhDigitsOnly</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="username">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -157,7 +157,7 @@
     <set>Qt::ImhDigitsOnly</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_5">
+  <widget class="QLineEdit" name="real_name">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -175,7 +175,7 @@
     <set>Qt::ImhDigitsOnly</set>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton">
+  <widget class="QRadioButton" name="admin_set_button">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -193,7 +193,7 @@
     <string>ADMIN</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton_2">
+  <widget class="QRadioButton" name="employee_set_button">
    <property name="geometry">
     <rect>
      <x>600</x>

@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="item_input_box">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -23,7 +23,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTableView" name="tableView">
+  <widget class="QTableView" name="items_table">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -33,7 +33,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="cost_box">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -43,7 +43,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTableView" name="tableView_2">
+  <widget class="QTableView" name="cost_tableview">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -71,7 +71,7 @@
     <string>TOTAL:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="total_ammount_label">
    <property name="geometry">
     <rect>
      <x>650</x>
@@ -125,7 +125,7 @@
     <string>DESCRIPCION:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="finish_button">
    <property name="geometry">
     <rect>
      <x>670</x>
@@ -138,7 +138,7 @@
     <string>Finalizar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="cancel_button">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -151,7 +151,7 @@
     <string>Cancelar </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="add_button">
    <property name="geometry">
     <rect>
      <x>730</x>
@@ -164,7 +164,7 @@
     <string>Agregar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="remove_button">
    <property name="geometry">
     <rect>
      <x>730</x>

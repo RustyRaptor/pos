@@ -49,7 +49,7 @@
     <string>DINERO:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="money_recieved_box">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -64,7 +64,7 @@
     </font>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="owed_money_label">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -82,7 +82,7 @@
     <string>AMOUNT</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="complete_button">
    <property name="geometry">
     <rect>
      <x>600</x>
@@ -95,7 +95,7 @@
     <string>COMPLETO</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="cancel_button">
    <property name="geometry">
     <rect>
      <x>80</x>

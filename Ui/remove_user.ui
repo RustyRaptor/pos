@@ -31,7 +31,7 @@
     <string>REMOVER USUARIO</string>
    </property>
   </widget>
-  <widget class="QListView" name="listView">
+  <widget class="QListView" name="list_of_users">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -41,7 +41,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_6">
+  <widget class="QPushButton" name="exit_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -59,7 +59,7 @@
     <string>SALIR</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_7">
+  <widget class="QPushButton" name="remove_button">
    <property name="geometry">
     <rect>
      <x>730</x>

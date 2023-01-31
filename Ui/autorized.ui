@@ -31,7 +31,7 @@
     <string>BIENVENIDO</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="start_d_button">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -49,7 +49,7 @@
     <string>EMPEZAR DIA</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="end_d_button">
    <property name="geometry">
     <rect>
      <x>280</x>
@@ -67,7 +67,7 @@
     <string>TERMINAR DIA</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="users_managemnt_button">
    <property name="geometry">
     <rect>
      <x>570</x>
@@ -85,7 +85,7 @@
     <string>MANEJAR USUARIOS</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="widrawl_password_button">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -103,7 +103,7 @@
     <string>RETIROS / CONTRASENA</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="log_out_button">
    <property name="geometry">
     <rect>
      <x>620</x>
@@ -121,7 +121,7 @@
     <string>CERRAR SESION</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_6">
+  <widget class="QPushButton" name="transaction_button">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -139,7 +139,7 @@
     <string>TRANSACION</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_7">
+  <widget class="QPushButton" name="exchange_button">
    <property name="geometry">
     <rect>
      <x>570</x>
@@ -157,7 +157,7 @@
     <string>CAMBIO</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_8">
+  <widget class="QPushButton" name="widrawl_button">
    <property name="geometry">
     <rect>
      <x>310</x>
