@@ -7,7 +7,8 @@ def login(user, password):
 
 
 # Misssing the recording of transaction to process funcitons
-# Computes calculations of owe moeny and returns the ammout of money to be returned after customer pay
+# Computes calculations of owe moeny and returns the ammout of money to be
+# returned after customer pay
 # and record te transaction into the csv file
 
 def compute_money_owed(money_owed, money_from_Customer, money_returned):
@@ -16,11 +17,13 @@ def compute_money_owed(money_owed, money_from_Customer, money_returned):
 
         return money_returned
 
-    return False  # Replace with an error to the screen notifing the customer that he needs to pay more money
+    return False  # Replace with an error to the screen notifing the
+                  # customer that he needs to pay more money
 
 
 # nonautorized widrawl function
-# This function will be used to record the ammount of money and the reason for the widrawl with current
+# This function will be used to record the ammount of money and the reason for
+# the widrawl with current
 # date and time of the widrawl recorded into the csv fil into a csv file
 
 
@@ -30,7 +33,8 @@ def nonautorized_widrawl(withdrawal, reason):
     return True
 
 # startday funciton
-# This function will grab the ammount of money that was set by admin that the register will have from the beggining of the day
+# This function will grab the ammount of money that was set by admin that the
+# register will have from the beggining of the day
 
 
 def start_day(starting_money):
@@ -40,10 +44,12 @@ def start_day(starting_money):
     write_csv_row([starting_money, generate_date_only_stamp()],
                   'csv_database/startofdayreports.csv')
 
-    return True  # Replace with a message to the screen saying that the set money was recorded and trake to the main screen
+    return True  # Replace with a message to the screen saying that the set
+                 # money was recorded and trake to the main screen
 
 # endday function
-# This function will close the reigser recording into the csv file the ammount of money that was left in the register
+# This function will close the reigser recording into the csv file the ammount
+# of money that was left in the register
 # This funciton is not complete
 
 
@@ -57,13 +63,6 @@ def check_start_ammount():
     if start_entry_exists() and not end_entry_exists():
         return True
     return False
-
-
-# EXAMPLE OF THE CSV FILE
-# START MONEY AMMOUNT , DATE , END  MONEY AMMOUNT , DATE
-# 2000 , 10-30-2020 , 3452 , 10 - 30 - 2020 # THE RECORD TRANSACTION WILL NOT WORK
-# 2000  , 10- 30 -2020  # The record transaction button will work
-# None # The record transaction button will not work
 
 def open_cash_register():
     set_register_open(True)
