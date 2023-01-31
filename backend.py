@@ -3,9 +3,7 @@ from utilities import *
 
 # Read user and password from user imput and check credentials with the csv file
 def login(user, password):
-    if (user, password) in [user for user in get_users()]:
-        return True
-    return False
+    return True if (user, password) in tuple(get_users()) else False
 
 
 # Misssing the recording of transaction to process funcitons
@@ -72,8 +70,7 @@ def open_cash_register():
 
 
 def register_is_open():
-    filename = 'csv_database/register_status.csv'
-    status_code = [status for status in get_rows(filename)][-1][0]
+    status_code = tuple(get_rows('csv_database/register_status.csv'))[-1][0]
     return True if status_code == "open" else False
 
 
@@ -87,8 +84,10 @@ def withdraw_money(amount):
 
 
 def get_current_money():
-    return int([row for row in get_rows('csv_database/currentmoney_'
-                                        + generate_date_only_stamp())][-1][0])
+    return int(tuple(get_rows(
+        'csv_database/currentmoney_'
+        + generate_date_only_stamp()))[-1][0]
+    )
 
 
 # Create new user in CSV file
@@ -103,8 +102,10 @@ def delete_user(username):
     for user in [user for user in users if username not in users]:
         write_csv_row_overwrite(user, 'csv_database/users.csv')
 
+
 def calculate_currency_exchange(input, rate):
     return input * rate
+
 
 def tests():
     initialize_database()
@@ -112,11 +113,11 @@ def tests():
     print(generate_id())
     new_user("john", "susy123", "John Madden")
     new_user("susan", "susy123", "John Madden")
-    print([user for user in get_users()])
+    print(tuple(get_users()))
     print("user exists: ", login("john", "susy123"))
     delete_user("john")
     print("user exists after delete: ", login("john", "susy123"))
-    print([user for user in get_users()])
+    print(tuple(get_users()))
     print("before start", check_start_ammount())
     start_day(500)
     print("after start before end ", check_start_ammount())
