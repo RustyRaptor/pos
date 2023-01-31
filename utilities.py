@@ -6,8 +6,6 @@ import csv
 ### DATABASE FUNCTIONS ###
 
 # Iterator for the username and passwords
-
-
 def get_users():
     with open('csv_database/users.csv', 'r') as file:
         reader = csv.reader(file)
@@ -48,23 +46,29 @@ def write_csv_row_overwrite(row, filename):
 # Initialize the folder and files for the database empty
 
 
+def initialize_file(filename):
+    try:
+        with open('./csv_database/'+filename, 'w') as file:
+            pass
+        return True
+    except:
+        return False
+        
 def initialize_database():
     try:
         os.mkdir("./csv_database")
     except:
         print("already there")
+        
+    return tuple(map(initialize_file,
+                  ["users.csv", "nonauthorizedpassword.csv",
+                   "nonauthorizedwithdrawals.csv", "startofdayreports.csv",
+                   "endofdayreports.csv", "actionlog.csv",
+                   "register_status.csv"]))
 
-    file_list = ["users.csv", "nonauthorizedpassword.csv",
-                 "nonauthorizedwithdrawals.csv", "startofdayreports.csv",
-                 "endofdayreports.csv", "actionlog.csv", "register_status.csv"]
 
-    for file in file_list:
-        with open('csv_database/'+file, 'w') as file:
-            pass
 # Misssing the recording of transaction to process funcitons
 # Checks password requiered for withatrawal to guarantee access from the csv
-
-
 def check_password_nonautorized_widrawal(password):
 
     with open('csv_database/nonautorizedpassword.csv', 'r') as file:
