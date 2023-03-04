@@ -14,6 +14,11 @@ def login_sequence(username, password, window):
         
     else:
         window["login"].hide()
-        window["non_authorized"].show()
+        session_start_unauthorized(
+            utilities.get_full_name_by_username(username), window)
+
+def session_start_unauthorized(name, window):
+    window["non_authorized"].show()
+    window["non_authorized"].username_label.setText(name)
 
 
