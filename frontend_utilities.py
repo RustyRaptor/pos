@@ -14,6 +14,7 @@ def login_sequence(username, password, window):
         
     else:
         window["login"].hide()
+        # TODO: Add logic for authorized users vs unauthorized
         session_start_unauthorized(
             utilities.get_full_name_by_username(username), window)
 
