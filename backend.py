@@ -3,8 +3,10 @@ from utilities import *
 
 # Read user and password from user imput and check credentials with the csv file
 def login(user, password):
-    return True if (user, password) in tuple(get_users()) else False
-
+    if filter(lambda x: x["username"] == user and x["password"] == password, get_users()):
+        return True
+    else:
+        return False
 
 # Misssing the recording of transaction to process funcitons
 # Computes calculations of owe moeny and returns the ammout of money to be
