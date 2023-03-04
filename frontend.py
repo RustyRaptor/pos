@@ -29,12 +29,13 @@ app_windows = {
 }
 
 
-app_windows["login"].warning_label.hide()
+
+
 app_windows["login"].log_in_button.clicked.connect(
-    lambda x: login_sequence(x,
-                             app_windows["login"].username_fill.text(),
-                             app_windows["login"].password_fill.text(),
-                             app_windows))
+    lambda: login_sequence(app_windows["login"].username_fill.text(),
+                           app_windows["login"].password_fill.text(),
+                           app_windows))
+
 
 app_windows["login"].show()
 
