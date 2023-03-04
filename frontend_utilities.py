@@ -2,14 +2,21 @@ import backend
 import utilities
 
 def connect_buttons(window):
-    pass
+    window["login"].log_in_button.clicked.connect(
+    lambda: login_button(window["login"].username_fill.text(),
+                           window["login"].password_fill.text(),
+                           window))
+    return window
 
-def login_sequence(username, password, window):
-    window["login"].warning_label.hide()
+def login_sequence(window):
+    window["login"].show()
     
+    window["login"].warning_label.hide()
+    window["login"].warning_label.setText("INVALID CREDENTIALS")
+    window["login"].warning_label.setStyleSheet("QLabel {color : red; }")
+
+def login_button(username, password, window):
     if not backend.login(username, password):
-        window["login"].warning_label.setText("INVALID CREDENTIALS")
-        window["login"].warning_label.setStyleSheet("QLabel {color : red; }")
         window["login"].warning_label.show()
         
     else:

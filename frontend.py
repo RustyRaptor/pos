@@ -37,7 +37,6 @@ login_sequence(app_windows)
 
 
 
-app_windows["login"].show()
 
 
 app.exec()
