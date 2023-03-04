@@ -31,10 +31,10 @@ app_windows = {
 
 
 
-app_windows["login"].log_in_button.clicked.connect(
-    lambda: login_sequence(app_windows["login"].username_fill.text(),
-                           app_windows["login"].password_fill.text(),
-                           app_windows))
+connect_buttons(app_windows)
+
+login_sequence(app_windows)
+
 
 
 app_windows["login"].show()
