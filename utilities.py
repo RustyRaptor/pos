@@ -10,7 +10,15 @@ def get_users():
     with open('csv_database/users.csv', 'r') as file:
         reader = csv.reader(file)
         for row in reader:
-            yield (row[1], row[2])
+            yield {
+                "username": row[1],
+                "password": row[2],
+                "full_name": row[3],
+                "user_id": row[0]
+                }
+
+def get_full_name_by_username(username):
+    return next(filter(lambda x: x["username"] == username, get_users()))["full_name"]
 
 
 def get_rows(filename):
